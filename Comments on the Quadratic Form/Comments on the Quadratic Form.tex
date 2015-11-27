@@ -51,6 +51,7 @@ c \in \mathbb{R}, \hspace{.5cm} \overrightarrow{x},\overrightarrow{b} \in \mathb
 \begin{minipage}{7.3 in}
 \begin{definition}[Del Operator] 
 The \textit{del operator} is formally defined as:
+\renewcommand*{\arraystretch}{1.2}
 \begin{equation*}
 \nabla = \begin{pmatrix}
 \frac{\partial}{\partial x_1} \\
@@ -102,7 +103,7 @@ where it is known to be a linear operator:
 \begin{minipage}{7.3 in}
 \begin{definition}[Gradient] 
 Given a scalar function that has $n$ parameters such as $f(\overrightarrow{x})$ above, then the \textit{derivative} or \textit{gradient} is formally defined as:
-\renewcommand*{\arraystretch}{1.5}
+\renewcommand*{\arraystretch}{1.2}
 \begin{equation*}
 f'(\overrightarrow{x}) = \nabla f(\overrightarrow{x}) = \begin{pmatrix}
 \frac{\partial}{\partial x_1} \\
@@ -163,6 +164,7 @@ b_n
 \end{equation*}
 \noindent
 Now using this we have:
+\renewcommand*{\arraystretch}{1.2}
 \begin{equation*}
 \begin{split}
 A\overrightarrow{x} &= \begin{pmatrix}
@@ -200,6 +202,7 @@ x_n
 \end{split}
 \end{equation*}
 where the sums are iterated from $i = 1$ to $n$ to account for all the components. Now the next step is:
+\renewcommand*{\arraystretch}{1.2}
 \begin{equation*}
 \begin{split}
 \overrightarrow{x}^TA\overrightarrow{x} &= \begin{pmatrix}
@@ -215,7 +218,7 @@ x_1 & x_2 & \dots & x_n
 &= \sum\sum a_{ji}x_ix_j
 \end{split}
 \end{equation*}
-With this we have a nice consolidated form for that annoying matrix multiplication. Now we want to find the partial derivatives. To make it easy on the brain I will find the partial derivative with respect to $x_1$ and then generalize it. So we have:
+With this we have a nice consolidated form for that annoying matrix multiplication. Now we want to find the partial derivatives. To begin we consider the partial derivative with respect to $x_1$:
 \begin{equation*}
 \begin{split}
 \frac{\partial(\overrightarrow{x}^TA\overrightarrow{x})}{\partial x_1} &= \frac{\partial}{\partial x_1} \Big[ x_1\sum a_{1i}x_i + x_2\sum a_{2i}x_i + \dots + x_n\sum a_{ni}x_i \Big] \\
@@ -228,6 +231,7 @@ Since $k = 1$ is a specific case, in general we have:
 \frac{\partial(\overrightarrow{x}^TA\overrightarrow{x})}{\partial x_k} = \sum a_{ki}x_i + \sum a_{ik}x_i 
 \end{equation*}
 Now all of the hard work is done. Phew! All that is left is to simplify our expression. We begin by writing down the gradient:
+\renewcommand*{\arraystretch}{1.2}
 \begin{equation*}
 \begin{split}
 \nabla (\overrightarrow{x}^TA\overrightarrow{x}) &= \begin{pmatrix}
@@ -251,7 +255,7 @@ Now all of the hard work is done. Phew! All that is left is to simplify our expr
 \end{split}
 \end{equation*}
 Lastly before jumping into the quadratic form we define:
-\renewcommand*{\arraystretch}{1.5}
+\renewcommand*{\arraystretch}{1.2}
 \begin{equation*}
 \begin{split}
 \overrightarrow{b}^T \overrightarrow{x} &= \begin{pmatrix}
@@ -266,6 +270,7 @@ x_n
 \end{split}
 \end{equation*}
 where the gradient is going to be:
+\renewcommand*{\arraystretch}{1.2}
 \begin{equation*}
 \begin{split}
 \nabla (\overrightarrow{b}^T \overrightarrow{x}) &= \nabla \Big( \sum b_ix_i \Big) \\
