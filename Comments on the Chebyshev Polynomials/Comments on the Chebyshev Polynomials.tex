@@ -111,6 +111,42 @@ T_n(x) &= \cos(n\arccos(x)) \\
 \begin{center}
 \fbox{
 \begin{minipage}{7.3 in}
+\begin{proposition}[Extending the Chebyshev Polynomials] 
+The definition of the \textit{Chebyshev Polynomials of the First Kind} can be extended for all real values:
+\begin{equation*}
+T_n(x) = \begin{cases}
+(-1)^n \cosh(n\arccosh(-x)) & x \leq -1 \\
+\cos(n\arccos(x)) & |x| < 1 \\
+\cosh(n\arccosh(x)) & x \geq 1
+\end{cases}
+\end{equation*}
+\end{proposition}
+\end{minipage}}
+\end{center}
+
+\begin{proof}
+The middle case is the one we already know. It has already been proven that hyperbolic cosine and its inverse can be used equivalently. Since the hyperbolic functions have a bigger domain, we let it define the region beyond $x = 1$. Now for all values below $x = -1$, consider the following:
+\begin{equation*}
+\begin{split}
+T_n(x) &= \frac{1}{2} \Big( (x + \sqrt{x^2 - 1})^n + (x - \sqrt{x^2 - 1})^n \Big) \\
+T_n(-x) &= \frac{1}{2} \Big( (-x + \sqrt{x^2 - 1})^n + (-x - \sqrt{x^2 - 1})^n \Big) \\
+&= \frac{1}{2} \Big( (-1)^n(x - \sqrt{x^2 - 1})^n + (-1)^n(x + \sqrt{x^2 - 1})^n \Big) \\
+&= (-1)^nT_n(x)
+\end{split}
+\end{equation*}
+which tells us that the polynomials for negative values will either be exactly the same or off by a sign. With this we can write the extension below $x = -1$ the same as the other one with taking into account the sign:
+\begin{equation*}
+\begin{split}
+T_n(x) &= (-1)^nT_n(-x) \\
+&= (-1)^n\cosh(n\arccosh(-x))
+\end{split}
+\end{equation*}
+for $x \leq -1$.
+\end{proof}
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
 \begin{proposition}[Recurrence Definition] 
 The \textit{Chebyshev Polynomials of the First Kind} can be calculated via the relations:
 \begin{equation*}
@@ -364,11 +400,12 @@ y(x) &= \sum_{n = 0}^\infty a_{2n + 1}x^{2n + 1} \\
 Note that each of these solutions has the missing components of the other, therefore we form the general solution as the linear combination of the two.
 \end{proof}
 
+\newpage
 \begin{center}
 \fbox{
 \begin{minipage}{7.3 in}
 \begin{proposition}[Convergence of the Solutions] 
-Using the ratio test, the power series solution to the Chebyshev equation converges iff $|x| \leq 1$.
+The power series solution to the Chebyshev equation converges iff $|x| \leq 1$.
 \end{proposition}
 \end{minipage}}
 \end{center}

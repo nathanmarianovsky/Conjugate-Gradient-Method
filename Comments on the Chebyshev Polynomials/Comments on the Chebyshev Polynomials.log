@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.4)  5 DEC 2015 15:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.9.4)  9 DEC 2015 17:54
 entering extended mode
 **Comments*on*the*Chebyshev*Polynomials.tex
 
@@ -393,11 +393,11 @@ n the Chebyshev Polynomials.aux") )
 Here is how much of TeX's memory you used:
  4069 strings out of 493921
  59422 string characters out of 3144877
- 133547 words of memory out of 3000000
+ 131547 words of memory out of 3000000
  7321 multiletter control sequences out of 15000+200000
  33366 words of font info for 76 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,19n,32p,319b,342s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,19n,32p,351b,342s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc
 /dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
@@ -414,7 +414,7 @@ ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Comments on the Chebyshev Polynomials.pdf" (7 pages, 163868 
+Output written on "Comments on the Chebyshev Polynomials.pdf" (7 pages, 165673 
 bytes).
 PDF statistics:
  87 PDF objects out of 1000 (max. 8388607)
