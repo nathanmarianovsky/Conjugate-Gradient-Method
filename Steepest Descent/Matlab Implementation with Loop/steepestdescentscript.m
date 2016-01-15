@@ -41,7 +41,7 @@ while ((i < imax) && (delta > error.^2 * deltazero))
     if (mod(i, 50) == 0)
         r = b - A*x;
     else
-        r = r - aplha*q;
+        r = r - alpha*q;
     end
     
     delta = r'*r;
@@ -57,4 +57,4 @@ disp(b);
 
 disp(' ');
 disp('Here is the vector Ax which should be similar to the vector b if the algorithm actually worked:');
-disp(A*x)
+disp(A*x);
