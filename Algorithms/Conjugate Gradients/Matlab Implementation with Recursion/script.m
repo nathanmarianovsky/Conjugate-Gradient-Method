@@ -1,5 +1,7 @@
 clc
 
+addpath('../../Resources/');
+
 disp('This code will run the Conjugate Gradients algorithm to determine the value of x s.t. it solves the system Ax = b.');
 
 disp(' ');

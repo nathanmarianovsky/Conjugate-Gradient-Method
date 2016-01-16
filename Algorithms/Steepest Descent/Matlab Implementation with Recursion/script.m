@@ -1,6 +1,6 @@
 clc
 
-addpath('../Matlab Implementation with Loop/');
+addpath('../../Resources/');
 
 disp('This code will run the Steepest Descent algorithm to determine the value of x s.t. it solves the system Ax = b.');
 
