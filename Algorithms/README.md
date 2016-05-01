@@ -1,4 +1,4 @@
-<h1 align="center">Steepest Descent</h1>
+<h1 align="center">Algorithms</h1>
 
 This folder includes implementations of:
 
