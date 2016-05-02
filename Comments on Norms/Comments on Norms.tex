@@ -1,0 +1,176 @@
+\documentclass[12pt, letterpaper, onecolumn, conference, final]{IEEEtran}
+
+\usepackage[margin = .5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage[makeroom]{cancel}
+\usepackage{polynom}
+\usepackage{booktabs}
+
+\title{Comments on Norms}
+\author{Nathan Marianovsky}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{example}{Example}
+\newtheorem{solution}{Solution}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{definition}[Norms] 
+Given a vector space $V$ over some field $F$, the \textit{norm} is defined to be the function:
+\begin{equation*}
+\rho: V \rightarrow \mathbb{R}
+\end{equation*}
+s.t.:
+\begin{itemize}
+
+\item[(a)]
+Given $\alpha \in F$ and $v \in V$:
+\begin{equation*}
+\rho(\alpha v) = |\alpha| \rho(v)
+\end{equation*}
+
+\item[(b)]
+Given $v_1,v_2 \in V$ the triangle inequality holds:
+\begin{equation*}
+\rho(v_1 + v_2) \leq \rho(v_1) + \rho(v_2)
+\end{equation*}
+
+\item[(c)]
+Given $v \in V$ the norm is non-negative:
+\begin{equation*}
+\rho(v) \geq 0
+\end{equation*}
+where equality holds iff $v = 0$.
+
+\end{itemize}
+Note that typically fields of interest include the real or complex numbers.
+\end{definition}
+\end{minipage}}
+\end{center}
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{proposition}[Euclidean Norm] 
+Given the vector space $V = \mathbb{R}^n$ over the field $F = \mathbb{R}$, the Euclidean norm is defined as:
+\begin{equation*}
+\| v \| = \sqrt{v^Tv} = \sqrt{\sum v_i^2}
+\end{equation*}
+where $v \in V$.
+\end{proposition}
+\end{minipage}}
+\end{center}
+
+\begin{proof}
+We just have to ensure that the three conditions for a norm hold true:
+\begin{itemize}
+
+\item[(a)]
+\begin{equation*}
+\begin{split}
+\| v \| &= \sqrt{(\alpha v^T)(\alpha v)} \\
+&= \sqrt{\alpha^2}\sqrt{v^Tv} \\
+&= |\alpha|\sqrt{v^Tv}
+\end{split}
+\end{equation*}
+
+\item[(b)]
+Using the Cauchy-Schwarz Inequality:
+\begin{equation*}
+\begin{split}
+\| v_1 + v_2 \|^2 &= \sum (v_{1i} + v_{2i})^2 \\
+\| v_1 + v_2 \|^2 &= \sum v_{1i}^2 + \sum v_{2i}^2 + 2\sum v_{1i}v_{2i} \\
+\| v_1 + v_2 \|^2 &= \| v_1 \|^2 + \| v_2 \|^2 + 2\sum v_{1i}v_{2i} \\
+\| v_1 + v_2 \|^2 &\leq \| v_1 \|^2 + \| v_2 \|^2 + 2\sqrt{\sum v_{1i}^2}\sqrt{\sum v_{2i}^2} \\
+\| v_1 + v_2 \|^2 &\leq \| v_1 \|^2 + \| v_2 \|^2 + 2\| v_1 \| \| v_2 \| \\
+\| v_1 + v_2 \|^2 &\leq (\| v_1 \| + \| v_2 \|)^2 \\
+\| v_1 + v_2 \| &\leq \| v_1 \| + \| v_2 \|
+\end{split}
+\end{equation*}
+
+\item[(c)]
+For this consider the fact that the inside of the norm is a sum of strictly positive values. That sum will only be zero is each component is zero. As for the positive behavior consider the fact that:
+\begin{equation*}
+\sqrt{x} \geq 0
+\end{equation*}
+which confirms that norm is strictly positive and zero only if the sum is zero which implies all of the components are zero.
+
+\end{itemize}
+\end{proof}
+
+\newpage
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{proposition}[Energy Norm] 
+Given the vector space $V = \mathbb{R}^n$ over the field $F = \mathbb{R}$, the energy norm is defined as:
+\begin{equation*}
+\| v \|_A = \sqrt{v^TAv}
+\end{equation*}
+where $v \in V$ and $A \in \mathbb{R}^{n^2}$ is known to be positive-definite and symmetric.
+\end{proposition}
+\end{minipage}}
+\end{center}
+
+\begin{proof}
+We just have to ensure that the three conditions for a norm hold true:
+\begin{itemize}
+
+\item[(a)]
+\begin{equation*}
+\begin{split}
+\| v \|_A &= \sqrt{(\alpha v^T)A(\alpha v)} \\
+&= \sqrt{\alpha^2}\sqrt{v^TAv} \\
+&= |\alpha|\sqrt{v^TAv}
+\end{split}
+\end{equation*}
+
+\item[(b)]
+Using the Cauchy-Schwarz Inequality and the fact that $A$ is a symmetric matrix:
+\begin{equation*}
+\begin{split}
+\| v_1 + v_2 \|_A^2 &= (v_1 + v_2)^TA(v_1 + v_2) \\
+\| v_1 + v_2 \|_A^2 &= (v_1^T + v_2^T)(Av_1 + Av_2) \\
+\| v_1 + v_2 \|_A^2 &= v_1^TAv_1 + v_2^TAv_2 + v_1^TAv_2 + v_2^TAv_1 \\
+\| v_1 + v_2 \|_A^2 &= \| v_1 \|_A^2 +  \| v_2 \|_A^2 + 2v_2^TAv_1 \\
+\| v_1 + v_2 \|_A^2 &= \| v_1 \|_A^2 +  \| v_2 \|_A^2 + 2v_2^TA^\frac{1}{2}A^\frac{1}{2}v_1 \\
+\| v_1 + v_2 \|_A^2 &= \| v_1 \|_A^2 +  \| v_2 \|_A^2 + 2((A^\frac{1}{2})^Tv_2)^T(A^\frac{1}{2}v_1) \\
+\| v_1 + v_2 \|_A^2 &\leq \| v_1 \|_A^2 +  \| v_2 \|_A^2 + \| (A^\frac{1}{2})^T v_2 \| \| A^\frac{1}{2} v_1 \| \\
+\| v_1 + v_2 \|_A^2 &\leq \| v_1 \|_A^2 +  \| v_2 \|_A^2 + \| A^\frac{1}{2} v_2 \| \| A^\frac{1}{2} v_1 \| \\
+\| v_1 + v_2 \|_A^2 &\leq \| v_1 \|_A^2 +  \| v_2 \|_A^2 + \| v_2 \|_A \| v_1 \|_A \\
+\| v_1 + v_2 \|_A^2 &\leq (\| v_1 \|_A + \| v_2 \|_A)^2 \\
+\| v_1 + v_2 \|_A &\leq \| v_1 \|_A + \| v_2 \|_A 
+\end{split}
+\end{equation*}
+
+\item[(c)]
+For this consider that if $A$ is positive-definite, then:
+\begin{equation*}
+v^TAv \geq 0
+\end{equation*}
+with equality only when $v = 0$. So the square guarantees that we only take on positive values where zero is achieved iff the vector is identically the zero vector.
+
+\end{itemize}
+\end{proof}
+
+
+
+\end{document}

@@ -1,0 +1,309 @@
+\documentclass[12pt, letterpaper, onecolumn, conference, final]{IEEEtran}
+
+\usepackage[margin = .5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage[makeroom]{cancel}
+\usepackage{polynom}
+\usepackage{booktabs}
+
+\title{Comments on the Quadratic Form}
+\author{Nathan Marianovsky}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{example}{Example}
+\newtheorem{solution}{Solution}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\renewcommand\thesection{\arabic{section}}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{definition}[Quadratic Form] 
+Formally a quadratic form is defined as:
+\begin{equation*}
+f(\overrightarrow{x}) = \frac{1}{2}\overrightarrow{x}^TA\overrightarrow{x} - \overrightarrow{b}^Tx + c
+\end{equation*}
+where:
+\begin{equation*}
+c \in \mathbb{R}, \hspace{.5cm} \overrightarrow{x},\overrightarrow{b} \in \mathbb{R}^n, \hspace{.5cm} \text{and} \hspace{.5cm} A \in \mathbb{R}^{n^2}
+\end{equation*}
+\end{definition}
+\end{minipage}}
+\end{center}
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{definition}[Del Operator] 
+The \textit{del operator} is formally defined as:
+\renewcommand*{\arraystretch}{1.2}
+\begin{equation*}
+\nabla = \begin{pmatrix}
+\frac{\partial}{\partial x_1} \\
+\frac{\partial}{\partial x_2} \\
+\frac{\partial}{\partial x_3} \\
+\vdots \\
+\frac{\partial}{\partial x_n}
+\end{pmatrix} 
+\end{equation*}
+where it is known to be a linear operator:
+\begin{equation*}
+\begin{split}
+\nabla (\alpha f(\overrightarrow{x}) + \beta g(\overrightarrow{x})) &= \begin{pmatrix}
+\frac{\partial}{\partial x_1} \\
+\frac{\partial}{\partial x_2} \\
+\frac{\partial}{\partial x_3} \\
+\vdots \\
+\frac{\partial}{\partial x_n}
+\end{pmatrix} (\alpha f(\overrightarrow{x}) + \beta g(\overrightarrow{x})) \\
+&= \begin{pmatrix}
+\frac{\partial}{\partial x_1} (\alpha f(\overrightarrow{x}) + \beta g(\overrightarrow{x})) \\
+\frac{\partial}{\partial x_2} (\alpha f(\overrightarrow{x}) + \beta g(\overrightarrow{x})) \\
+\frac{\partial}{\partial x_3} (\alpha f(\overrightarrow{x}) + \beta g(\overrightarrow{x})) \\
+\vdots \\
+\frac{\partial}{\partial x_n} (\alpha f(\overrightarrow{x}) + \beta g(\overrightarrow{x}))
+\end{pmatrix} \\
+&= \begin{pmatrix}
+\alpha \frac{\partial}{\partial x_1} f(\overrightarrow{x}) \\
+\alpha \frac{\partial}{\partial x_2} f(\overrightarrow{x}) \\
+\alpha \frac{\partial}{\partial x_3} f(\overrightarrow{x}) \\
+\vdots \\
+\alpha \frac{\partial}{\partial x_n} f(\overrightarrow{x})
+\end{pmatrix} + \begin{pmatrix}
+\beta \frac{\partial}{\partial x_1} g(\overrightarrow{x}) \\
+\beta \frac{\partial}{\partial x_2} g(\overrightarrow{x}) \\
+\beta \frac{\partial}{\partial x_3} g(\overrightarrow{x}) \\
+\vdots \\
+\beta \frac{\partial}{\partial x_n} g(\overrightarrow{x})
+\end{pmatrix} \\
+&= \alpha \nabla f(\overrightarrow{x}) + \beta \nabla g(\overrightarrow{x})
+\end{split}
+\end{equation*}
+\end{definition}
+\end{minipage}}
+\end{center}
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{definition}[Gradient] 
+Given a scalar function that has $n$ parameters such as $f(\overrightarrow{x})$ above, then the \textit{derivative} or \textit{gradient} is formally defined as:
+\renewcommand*{\arraystretch}{1.2}
+\begin{equation*}
+f'(\overrightarrow{x}) = \nabla f(\overrightarrow{x}) = \begin{pmatrix}
+\frac{\partial}{\partial x_1} \\
+\frac{\partial}{\partial x_2} \\
+\frac{\partial}{\partial x_3} \\
+\vdots \\
+\frac{\partial}{\partial x_n}
+\end{pmatrix} f(\overrightarrow{x}) = \begin{pmatrix}
+\frac{\partial f}{\partial x_1} \\
+\frac{\partial f}{\partial x_2} \\
+\frac{\partial f}{\partial x_3} \\
+\vdots \\
+\frac{\partial f}{\partial x_n}
+\end{pmatrix}
+\end{equation*}
+\end{definition}
+\end{minipage}}
+\end{center}
+
+\begin{center}
+\fbox{
+\begin{minipage}{7.3 in}
+\begin{proposition} 
+The gradient of the quadratic form is given as:
+\begin{equation*}
+f'(\overrightarrow{x}) = \frac{1}{2}A^T\overrightarrow{x} + \frac{1}{2}A\overrightarrow{x} - \overrightarrow{b}
+\end{equation*}
+and if $A$ is symmetric:
+\begin{equation*}
+f'(\overrightarrow{x}) = A\overrightarrow{x} - \overrightarrow{b}
+\end{equation*}
+\end{proposition}
+\end{minipage}}
+\end{center}
+
+\begin{proof}
+To prove the proposition we begin by defining:
+\begin{equation*}
+\begin{split}
+A &= \begin{pmatrix}
+a_{11} & a_{12} & \dots & a_{1n} \\
+a_{21} & a_{22} & \dots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nn}
+\end{pmatrix} \\
+\overrightarrow{x} &= \begin{pmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{pmatrix} \hspace{.7cm} \overrightarrow{b} = \begin{pmatrix}
+b_1 \\
+b_2 \\
+\vdots \\
+b_n
+\end{pmatrix}
+\end{split}
+\end{equation*}
+\noindent
+Now using this we have:
+\renewcommand*{\arraystretch}{1.2}
+\begin{equation*}
+\begin{split}
+A\overrightarrow{x} &= \begin{pmatrix}
+a_{11} & a_{12} & \dots & a_{1n} \\
+a_{21} & a_{22} & \dots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nn}
+\end{pmatrix} \begin{pmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{pmatrix} = \begin{pmatrix}
+\sum a_{1i}x_i \\
+\sum a_{2i}x_i \\
+\vdots \\
+\sum a_{ni}x_i
+\end{pmatrix} \\
+A^T\overrightarrow{x} &= \begin{pmatrix}
+a_{11} & a_{21} & \dots & a_{n1} \\
+a_{12} & a_{22} & \dots & a_{n2} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{1n} & a_{2n} & \dots & a_{nn}
+\end{pmatrix} \begin{pmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{pmatrix} = \begin{pmatrix}
+\sum a_{i1}x_i \\
+\sum a_{i2}x_i \\
+\vdots \\
+\sum a_{in}x_i
+\end{pmatrix}
+\end{split}
+\end{equation*}
+where the sums are iterated from $i = 1$ to $n$ to account for all the components. Now the next step is:
+\renewcommand*{\arraystretch}{1.2}
+\begin{equation*}
+\begin{split}
+\overrightarrow{x}^TA\overrightarrow{x} &= \begin{pmatrix}
+x_1 & x_2 & \dots & x_n
+\end{pmatrix} \begin{pmatrix}
+\sum a_{1i}x_i \\
+\sum a_{2i}x_i \\
+\vdots \\
+\sum a_{ni}x_i
+\end{pmatrix} \\
+&= x_1\sum a_{1i}x_i + x_2\sum a_{2i}x_i + \dots + x_n\sum a_{ni}x_i \\
+&= \sum x_j \sum a_{ji}x_i \\
+&= \sum\sum a_{ji}x_ix_j
+\end{split}
+\end{equation*}
+With this we have a nice consolidated form for that annoying matrix multiplication. Now we want to find the partial derivatives. To begin we consider the partial derivative with respect to $x_1$:
+\begin{equation*}
+\begin{split}
+\frac{\partial(\overrightarrow{x}^TA\overrightarrow{x})}{\partial x_1} &= \frac{\partial}{\partial x_1} \Big[ x_1\sum a_{1i}x_i + x_2\sum a_{2i}x_i + \dots + x_n\sum a_{ni}x_i \Big] \\
+&= (2a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n) + (a_{21}x_2 + a_{31}x_3 + \dots + a_{n1}x_n) \\
+&= \sum a_{1i}x_i + \sum a_{i1}x_i 
+\end{split}
+\end{equation*}
+Since $k = 1$ is a specific case, in general we have:
+\begin{equation*}
+\frac{\partial(\overrightarrow{x}^TA\overrightarrow{x})}{\partial x_k} = \sum a_{ki}x_i + \sum a_{ik}x_i 
+\end{equation*}
+Now all of the hard work is done. Phew! All that is left is to simplify our expression. We begin by writing down the gradient:
+\renewcommand*{\arraystretch}{1.2}
+\begin{equation*}
+\begin{split}
+\nabla (\overrightarrow{x}^TA\overrightarrow{x}) &= \begin{pmatrix}
+\sum a_{1i}x_i + \sum a_{i1}x_i \\
+\sum a_{2i}x_i + \sum a_{i2}x_i \\
+\vdots \\
+\sum a_{ni}x_i + \sum a_{in}x_i  
+\end{pmatrix} \\
+&= \begin{pmatrix}
+\sum a_{1i}x_i \\
+\sum a_{2i}x_i \\
+\vdots \\
+\sum a_{ni}x_i 
+\end{pmatrix} + \begin{pmatrix}
+\sum a_{i1}x_i \\
+\sum a_{i2}x_i \\
+\vdots \\
+\sum a_{in}x_i  
+\end{pmatrix} \\
+&= A\overrightarrow{x} + A^T\overrightarrow{x}
+\end{split}
+\end{equation*}
+Lastly before jumping into the quadratic form we define:
+\renewcommand*{\arraystretch}{1.2}
+\begin{equation*}
+\begin{split}
+\overrightarrow{b}^T \overrightarrow{x} &= \begin{pmatrix}
+b_1 & b_2 & \dots & b_n
+\end{pmatrix} \begin{pmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{pmatrix} \\
+&= \sum b_ix_i
+\end{split}
+\end{equation*}
+where the gradient is going to be:
+\renewcommand*{\arraystretch}{1.2}
+\begin{equation*}
+\begin{split}
+\nabla (\overrightarrow{b}^T \overrightarrow{x}) &= \nabla \Big( \sum b_ix_i \Big) \\
+&= \begin{pmatrix}
+\frac{\partial}{\partial x_1} \sum b_ix_i \\
+\frac{\partial}{\partial x_2} \sum b_ix_i \\
+\vdots \\
+\frac{\partial}{\partial x_n} \sum b_ix_i
+\end{pmatrix} \\
+&= \begin{pmatrix}
+b_1 \\
+b_2 \\
+\vdots \\
+b_n
+\end{pmatrix} \\
+&= \overrightarrow{b}
+\end{split}
+\end{equation*}
+Now using our results, the gradient of the quadratic form is going to be:
+\begin{equation*}
+\begin{split}
+f'(\overrightarrow{x}) &= \nabla f(\overrightarrow{x}) \\
+&= \frac{1}{2}\nabla(\overrightarrow{x}^TA\overrightarrow{x}) - \nabla (\overrightarrow{b}^T \overrightarrow{x}) + \nabla (c) \\
+&= \frac{1}{2}(A\overrightarrow{x} + A^T\overrightarrow{x}) - (\overrightarrow{b}) + (\overrightarrow{0}) \\
+&= \frac{1}{2}A\overrightarrow{x} + \frac{1}{2}A^T\overrightarrow{x} - \overrightarrow{b}
+\end{split}
+\end{equation*}
+Lastly if $A$ is symmetric that means $A = A^T$ which will give:
+\begin{equation*}
+f'(\overrightarrow{x}) = A\overrightarrow{x} - \overrightarrow{b}
+\end{equation*}
+\end{proof}
+
+
+
+\end{document}
